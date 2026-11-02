@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SMILE - Our Team</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: white;
+            color: #222;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: white;
+            padding: 15px 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+            position: relative;
+            z-index: 10;
+        }
+
+
+        /* =========================
+           BACK TO HOME BUTTON
+        ========================= */
+
+        .back-btn {
+            background: #2058a5;
+            color: white;
+
+            padding: 10px 18px;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            box-shadow: 0 4px 0 #123a72;
+
+            transition: 0.2s;
+        }
+
+
+        .back-btn:hover {
+            background: #174a8d;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           SMILE LOGO
+        ========================= */
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .smile {
+            width: 55px;
+            height: 55px;
+
+            background: #ffc24b;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 30px;
+
+            margin-right: 10px;
+
+            box-shadow: 0 5px 0 #d99b1b;
+        }
+
+
+        .logo h1 {
+            color: #2058a5;
+            font-size: 28px;
+        }
+
+
+        .logo p {
+            font-size: 11px;
+            color: #333;
+        }
+
+
+        /* =========================
+           TEAM SECTION
+        ========================= */
+
+        .team-section {
+            background-color: #eef5fe;
+            width: 100%;
+            min-height: 100vh;
+
+            padding: 55px 8%;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           MAIN HEADING
+        ========================= */
+
+        .main-title {
+            text-align: center;
+
+            margin-left: 5%;
+
+            font-size: 60px;
+
+            color: #24457f;
+
+            font-weight: bold;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           SECTION HEADING
+        ========================= */
+
+        .section-title {
+            text-align: center;
+
+            color: #f39a63;
+
+            font-size: 27px;
+
+            font-weight: bold;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* =========================
+           PROGRAM PATRON
+        ========================= */
+
+        .patron-container {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-start;
+
+            gap: 180px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile {
+            text-align: center;
+
+            width: 230px;
+        }
+
+
+        .profile img {
+            width: 170px;
+            height: 170px;
+
+            object-fit: cover;
+
+            display: block;
+
+            margin: auto;
+
+            border-radius: 50%;
+        }
+
+
+        .profile-name {
+            margin-top: 10px;
+
+            font-size: 24px;
+
+            color: #24457f;
+
+            font-weight: bold;
+        }
+
+
+        .profile-role {
+            margin-top: 5px;
+
+            font-size: 15px;
+
+            line-height: 1.4;
+
+            font-weight: bold;
+
+            color: #333;
+        }
+
+
+        /* =========================
+           TRAINERS TITLE
+        ========================= */
+
+        .trainers-title {
+            text-align: center;
+
+            font-size: 27px;
+
+            color: #333;
+
+            font-weight: bold;
+
+            margin: 10px 0 35px;
+        }
+
+
+        /* =========================
+           TRAINERS GRID
+        ========================= */
+
+        .trainers-grid {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            column-gap: 60px;
+
+            row-gap: 45px;
+
+            justify-items: center;
+        }
+
+
+        /* =========================
+           BOTTOM TRAINERS
+        ========================= */
+
+        .bottom-trainers {
+            max-width: 650px;
+
+            margin: 40px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 100px;
+
+            justify-items: center;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .team-section {
+                padding: 40px 5%;
+            }
+
+
+            .main-title {
+                font-size: 45px;
+
+                text-align: center;
+
+                margin-left: 0;
+            }
+
+
+            .patron-container {
+                gap: 50px;
+            }
+
+
+            .trainers-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 40px;
+            }
+
+
+            .team-section::before,
+            .team-section::after {
+                width: 30px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            /* HEADER */
+
+            header {
+                padding: 12px 4%;
+            }
+
+
+            .back-btn {
+                padding: 9px 12px;
+
+                font-size: 13px;
+            }
+
+
+            .smile {
+                width: 45px;
+                height: 45px;
+
+                font-size: 24px;
+            }
+
+
+            .logo h1 {
+                font-size: 24px;
+            }
+
+
+            .logo p {
+                font-size: 9px;
+            }
+
+
+            /* TEAM */
+
+            .main-title {
+                font-size: 38px;
+            }
+
+
+            .section-title,
+            .trainers-title {
+                font-size: 22px;
+            }
+
+
+            .patron-container {
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 35px;
+            }
+
+
+            .trainers-grid,
+            .bottom-trainers {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+
+            .profile-name {
+                font-size: 21px;
+            }
+
+
+            .profile-role {
+                font-size: 14px;
+            }
+
+
+            .team-section::before,
+            .team-section::after {
+                display: none;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <div class="logo">
+
+            <div class="smile">
+                😊
+            </div>
+
+
+            <div>
+
+                <h1>
+                    SMILE
+                </h1>
+
+                <p>
+                    Life Skills
+
+                </p>
+                <p>
+                    & Emotional Intelligence Program
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a href="landingpage1.html" class="back-btn">
+            ← Home
+        </a>
+
+    </header>
+
+
+
+    <section class="team-section">
+
+
+        <h1 class="main-title">
+            Our Team
+        </h1>
+
+
+        <h2 class="section-title">
+            PROGRAM PATRON
+        </h2>
+
+
+        <div class="patron-container">
+
+
+            <div class="profile">
+
+                <img src="maheshsir.jpeg" alt="Program Patron">
+
+                <h3 class="profile-name">
+                    MR MAHESH MASAL
+                </h3>
+
+                <p class="profile-role">
+                    HUMAN MIND COACH AND CORPORATE TRAINER
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <img src="nandamam.jpeg" alt="Lead Trainer">
+
+                <h3 class="profile-name">
+                    MS. NANDA HAMPIHOLI
+                </h3>
+
+                <p class="profile-role">
+                    NLP MASTER TRAINER AND<br>
+                    TRANSFORMATIONAL COACH
+                </p>
+
+            </div>
+
+        </div>
+        <br><br>
+
+
+        <h2 class="trainers-title">
+            TRAINERS CREW
+        </h2>
+
+
+        <div class="trainers-grid">
+
+
+            <div class="profile">
+
+                <img src="omkiran.jpeg" alt="Trainer">
+
+                <h3 class="profile-name">
+                    OM KIRAN
+                </h3>
+
+                <p class="profile-role">
+                    HUMAN MIND COACH &<br>
+                    CORPORATE TRAINER
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <img src="deenaz.jpeg" alt="Trainer">
+
+                <h3 class="profile-name">
+                    DEENAZ AHMED
+                </h3>
+
+                <p class="profile-role">
+                    PROFESSIONAL DEVELOPMENT<br>
+                    COACH & CORPORATE TRAINER
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <img src="sureshsir.jpeg" alt="Trainer">
+
+                <h3 class="profile-name">
+                    SURESH RAO
+                </h3>
+
+                <p class="profile-role">
+                    MASTER TRAINER &<br>
+                    CHIEF CONSULTANT
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <img src="anandaksir.jpeg" alt="Trainer">
+
+                <h3 class="profile-name">
+                    ANAND KUSTAGI
+                </h3>
+
+                <p class="profile-role">
+                    PUBLIC SPEAKING MENTOR &<br>
+                    SOFT SKILLS TRAINER
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <img src="shivasir.jpeg" alt="Trainer">
+
+                <h3 class="profile-name">
+                    SHIVA SHEKHAR
+                </h3>
+
+                <p class="profile-role">
+                    INNOVATION FACILITATOR, &<br>
+                    YOUTH TRANSFORMATION COACH
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <img src="greeshma.jpeg" alt="Trainer">
+
+                <h3 class="profile-name">
+                    GREESHMA
+                </h3>
+
+                <p class="profile-role">
+                    CREATIVE YOUTH LIFE COACH &<br>
+                    NLP PRACTITIONER
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="bottom-trainers">
+
+
+            <div class="profile">
+
+                <img src="praveensir.jpeg" alt="Trainer">
+
+                <h3 class="profile-name">
+                    PRAVEEN DESHPANDE
+                </h3>
+
+                <p class="profile-role">
+                    JCI TRAINER, YOUTH POTENTIAL &<br>
+                    PERSONAL EXCELLENCE COACH
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <img src="drkedar.jpeg" alt="Trainer">
+
+                <h3 class="profile-name">
+                    DR. KEDAR
+                </h3>
+
+                <p class="profile-role">
+                    JCI NATIONAL TRAINER &<br>
+                    NLP PRACTITIONER
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</body>
+
+</html>

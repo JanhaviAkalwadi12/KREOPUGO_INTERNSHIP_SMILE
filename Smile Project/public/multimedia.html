@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SMILE Multi-Method Approach</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1f3658;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: white;
+
+            padding: 15px 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+            position: relative;
+            z-index: 10;
+        }
+
+
+        /* =========================
+           BACK TO HOME BUTTON
+        ========================= */
+
+        .back-btn {
+            background: #2058a5;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            box-shadow: 0 4px 0 #123a72;
+
+            transition: 0.2s;
+        }
+
+
+        .back-btn:hover {
+            background: #174a8d;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           SMILE LOGO
+        ========================= */
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .smile {
+            width: 55px;
+            height: 55px;
+
+            background: #ffc24b;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 30px;
+
+            margin-right: 10px;
+
+            box-shadow: 0 5px 0 #d99b1b;
+        }
+
+
+        .logo h1 {
+            color: #2058a5;
+
+            font-size: 28px;
+        }
+
+
+        .logo p {
+            font-size: 11px;
+
+            color: #333;
+        }
+
+
+        /* =========================
+           MAIN SECTION
+        ========================= */
+
+        .method-section {
+            background-color: #eef5fe;
+
+            width: 85%;
+
+            max-width: 1100px;
+
+            margin: 70px auto;
+
+        }
+
+
+        /* =========================
+           HEADING
+        ========================= */
+
+        .method-section h1 {
+
+            font-size: 36px;
+
+            color: #1f3b68;
+
+            margin-bottom: 50px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           GRID
+        ========================= */
+
+        .method-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+
+        }
+
+
+        /* =========================
+           3D CARD
+        ========================= */
+
+        .method-card {
+
+            background: white;
+
+            min-height: 220px;
+
+            padding: 25px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            border: 1px solid #f0dca5;
+
+
+            /* 3D SHADOW */
+
+            box-shadow:
+
+                10px 12px 20px rgba(0, 0, 0, 0.15),
+
+                -5px -5px 15px rgba(255, 255, 255, 0.9),
+
+                inset 2px 2px 5px rgba(255, 255, 255, 0.8);
+
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================
+           HOVER 3D EFFECT
+        ========================= */
+
+        .method-card:hover {
+
+            transform:
+                translateY(-10px) scale(1.02);
+
+
+            box-shadow:
+
+                15px 20px 30px rgba(0, 0, 0, 0.20),
+
+                -5px -5px 15px rgba(255, 255, 255, 0.9);
+
+        }
+
+
+        /* =========================
+           ICONS
+        ========================= */
+
+        .icon {
+
+            font-size: 60px;
+
+            margin-bottom: 20px;
+
+            filter:
+                drop-shadow(4px 5px 4px rgba(0, 0, 0, 0.20));
+
+            transition:
+                transform 0.4s ease;
+
+        }
+
+
+        /* =========================
+           ICON HOVER
+        ========================= */
+
+        .method-card:hover .icon {
+
+            transform:
+                scale(1.15) translateY(-5px);
+
+        }
+
+
+        /* =========================
+           CARD HEADING
+        ========================= */
+
+        .method-card h2 {
+
+            font-size: 23px;
+
+            line-height: 1.4;
+
+            color: #263b5b;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding: 12px 4%;
+
+            }
+
+
+            .back-btn {
+
+                padding: 9px 12px;
+
+                font-size: 13px;
+
+            }
+
+
+            .smile {
+
+                width: 45px;
+
+                height: 45px;
+
+                font-size: 24px;
+
+            }
+
+
+            .logo h1 {
+
+                font-size: 24px;
+
+            }
+
+
+            .logo p {
+
+                font-size: 9px;
+
+            }
+
+
+            .method-section {
+
+                width: 90%;
+
+                margin: 50px auto;
+
+            }
+
+
+            .method-section h1 {
+
+                font-size: 28px;
+
+                margin-bottom: 35px;
+
+            }
+
+
+            .method-grid {
+
+                gap: 18px;
+
+            }
+
+
+            .method-card {
+
+                min-height: 190px;
+
+                padding: 15px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .icon {
+
+                font-size: 48px;
+
+            }
+
+
+            .method-card h2 {
+
+                font-size: 17px;
+
+            }
+
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 450px) {
+
+            .method-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .method-card {
+
+                min-height: 200px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+
+        <!-- SMILE LOGO -->
+
+        <div class="logo">
+
+            <div class="smile">
+                😊
+            </div>
+
+
+            <div>
+
+                <h1>
+                    SMILE
+                </h1>
+
+                <p>
+                    Life Skills
+
+                </p>
+                <p>
+                    & Emotional Intelligence Program
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- BACK TO HOME -->
+
+        <a href="landingpage1.html" class="back-btn">
+            ← Home
+        </a>
+
+
+    </header>
+
+
+
+    <!-- =========================
+         MULTI-METHOD SECTION
+    ========================= -->
+
+    <section class="method-section">
+
+
+        <h1>
+            SMILE uses a multi-method approach.
+        </h1>
+
+
+        <div class="method-grid">
+
+
+            <!-- CARD 1 -->
+
+            <div class="method-card">
+
+                <div class="icon">
+                    🧩
+                </div>
+
+                <h2>
+                    ACTIVITY-BASED<br>
+                    LEARNING
+                </h2>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="method-card">
+
+                <div class="icon">
+                    🎲
+                </div>
+
+                <h2>
+                    EXPERIENTIAL GAMES<br>
+                    &amp; SIMULATIONS
+                </h2>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="method-card">
+
+                <div class="icon">
+                    📣
+                </div>
+
+                <h2>
+                    GROUP<br>
+                    DISCUSSIONS
+                </h2>
+
+            </div>
+
+
+
+            <!-- CARD 4 -->
+
+            <div class="method-card">
+
+                <div class="icon">
+                    🧠
+                </div>
+
+                <h2>
+                    NLP-BASED<br>
+                    TECHNIQUES
+                </h2>
+
+            </div>
+
+
+
+            <!-- CARD 5 -->
+
+            <div class="method-card">
+
+                <div class="icon">
+                    📋
+                </div>
+
+                <h2>
+                    GUIDED<br>
+                    REFLECTION<br>
+                    WORKSHEETS
+                </h2>
+
+            </div>
+
+
+
+            <!-- CARD 6 -->
+
+            <div class="method-card">
+
+                <div class="icon">
+                    🎬
+                </div>
+
+                <h2>
+                    ROLE PLAYS &amp;<br>
+                    REAL-LIFE<br>
+                    SCENARIOS
+                </h2>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

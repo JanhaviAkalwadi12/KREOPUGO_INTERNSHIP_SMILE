@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULES</title>
+    <style>
+
+        /* ================= GENERAL ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eef5fc;
+            color: #333;
+            min-height: 100vh;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .header {
+            height: 75px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            box-shadow:
+                0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* ================= LOGO ================= */
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .smile {
+            width: 50px;
+            height: 50px;
+            background: #ffc24b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-right: 10px;
+            box-shadow:
+                0 5px 0 #d99b1b;
+        }
+
+        .logo h1 {
+            color: #2058a5;
+            font-size: 26px;
+        }
+
+        .logo p {
+            font-size: 10px;
+            color: #555;
+        }
+
+
+        /* ================= BACK BUTTON ================= */
+
+        .back-btn {
+            text-decoration: none;
+            background: #2058a5;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #174a8d;
+            transform:
+                translateX(-3px);
+        }
+
+
+        /* ================= MAIN ================= */
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 45px 25px;
+        }
+
+
+        /* ================= TITLE ================= */
+
+        .title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .title h2 {
+            font-size: 34px;
+            color: #2058a5;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #666;
+            font-size: 15px;
+        }
+
+
+        /* ================= MODULE GRID ================= */
+
+        .modules {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 35px;
+            perspective: 1200px;
+        }
+
+
+        /* ================= MODULE CARD ================= */
+
+        .module-card {
+            height: 280px;
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow:
+                0 15px 25px rgba(0, 0, 0, 0.12);
+            transform-style: preserve-3d;
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.5s ease;
+        }
+
+
+        /* ================= 3D HOVER ================= */
+
+        .module-card:hover {
+            transform:
+                rotateX(8deg)
+                rotateY(-8deg)
+                translateY(-12px)
+                translateZ(15px);
+            box-shadow:
+                20px 25px 35px rgba(0, 0, 0, 0.20);
+        }
+
+
+        /* ================= MODULE ICON ================= */
+
+        .module-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            background: #eef5fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+            transform:
+                translateZ(35px);
+            box-shadow:
+                0 8px 15px rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* ================= MODULE TITLE ================= */
+
+        .module-card h3 {
+            color: #2058a5;
+            font-size: 19px;
+            margin-bottom: 10px;
+            transform:
+                translateZ(25px);
+        }
+
+
+        /* ================= MODULE DESCRIPTION ================= */
+
+        .module-card p {
+            color: #0b0b0b;
+            font-size: 13px;
+            line-height: 1.5;
+            transform:
+                translateZ(20px);
+        }
+
+
+        /* ================= MODULE NUMBER ================= */
+
+        .module-number {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #9ab4d0;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 45px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 900px) {
+
+            .modules {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            .header {
+
+                padding: 0 20px;
+
+            }
+
+
+            .logo h1 {
+
+                font-size: 22px;
+
+            }
+
+
+            .logo p {
+
+                font-size: 9px;
+
+            }
+
+
+            .smile {
+
+                width: 45px;
+                height: 45px;
+
+                font-size: 24px;
+
+            }
+
+
+            .back-btn {
+
+                padding: 9px 14px;
+
+                font-size: 13px;
+
+            }
+
+
+            .modules {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .title h2 {
+
+                font-size: 28px;
+
+            }
+
+
+            .title p {
+
+                font-size: 14px;
+
+            }
+
+
+            .module-card {
+
+                height: 260px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="smile">
+                😊
+            </div>
+
+            <div>
+
+                <h1>
+                    SMILE
+                </h1>
+
+                <p>
+                    Life Skills
+
+                </p>
+                <p>
+                    & Emotional Intelligence Program
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- BACK BUTTON -->
+
+        <a href="landingpage1.html"
+           class="back-btn">
+
+            Logout
+
+        </a>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- TITLE -->
+
+        <div class="title">
+
+            <h2>
+                Annual Curriculum Overview
+            </h2>
+
+            <p>
+                Explore the SMILE curriculum and develop essential life skills
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= MODULES ================= -->
+
+        <div class="modules">
+
+
+            <!-- ================= MODULE 1 ================= -->
+
+            <a href="module1.html"
+               class="module-card">
+
+                <span class="module-number">
+                    MODULE 01
+                </span>
+
+                <div class="module-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Self Awareness and Identity
+                </h3>
+
+                <p>
+                    Strengths and weaknesses mapping,
+                    self management, self motivation,
+                    resilience, personal action plan
+                    and self esteem.
+                </p>
+
+            </a>
+
+
+
+            <!-- ================= MODULE 2 ================= -->
+
+            <a href="module2.html"
+               class="module-card">
+
+                <span class="module-number">
+                    MODULE 02
+                </span>
+
+                <div class="module-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Emotional Intelligence
+                </h3>
+
+                <p>
+                    Elements of EI, IQ vs EQ,
+                    mental, physical and emotional
+                    self care, empathy, kindness,
+                    positive self talk and active listening.
+                </p>
+
+            </a>
+
+
+
+            <!-- ================= MODULE 3 ================= -->
+
+            <a href="module3.html"
+               class="module-card">
+
+                <span class="module-number">
+                    MODULE 03
+                </span>
+
+                <div class="module-icon">
+                    🗣️
+                </div>
+
+                <h3>
+                    Communication and Relationships
+                </h3>
+
+                <p>
+                    One-to-one communication,
+                    interpersonal and intrapersonal
+                    communication, public speaking
+                    and overcoming communication barriers.
+                </p>
+
+            </a>
+
+
+
+            <!-- ================= MODULE 4 ================= -->
+
+            <a href="module4.html"
+               class="module-card">
+
+                <span class="module-number">
+                    MODULE 04
+                </span>
+
+                <div class="module-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Focus, Discipline and Study Skills
+                </h3>
+
+                <p>
+                    Growth mindset, overcoming fear
+                    of failure, assertiveness, boundaries,
+                    healthy habits, memory, concentration,
+                    note taking and study habits.
+                </p>
+
+            </a>
+
+
+
+            <!-- ================= MODULE 5 ================= -->
+
+            <a href="module5.html"
+               class="module-card">
+
+                <span class="module-number">
+                    MODULE 05
+                </span>
+
+                <div class="module-icon">
+                    🤔
+                </div>
+
+                <h3>
+                    Decision Making and Career Guidance
+                </h3>
+
+                <p>
+                    Expressing needs, saying no,
+                    eco pledge, transferable skills,
+                    dream mapping, decision making,
+                    responsibility and tiny habits.
+                </p>
+
+            </a>
+
+
+
+            <!-- ================= MODULE 6 ================= -->
+
+            <a href="module6.html"
+               class="module-card">
+
+                <span class="module-number">
+                    MODULE 06
+                </span>
+
+                <div class="module-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    Stress Management and Well-being
+                </h3>
+
+                <p>
+                    Progressive relaxation, conflict
+                    resolution, time management,
+                    exam anxiety, self care, social
+                    well-being and responsibility.
+                </p>
+
+            </a>
+
+
+
+            <!-- ================= MODULE 7 ================= -->
+
+            <a href="module7.html"
+               class="module-card">
+
+                <span class="module-number">
+                    MODULE 07
+                </span>
+
+                <div class="module-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    Values, Goals and Leadership
+                </h3>
+
+                <p>
+                    Belief and value systems,
+                    goal setting, identifying opportunities,
+                    leadership at home, school and
+                    in the community.
+                </p>
+
+            </a>
+
+
+
+            <!-- ================= MODULE 8 ================= -->
+
+            <a href="module8.html"
+               class="module-card">
+
+                <span class="module-number">
+                    MODULE 08
+                </span>
+
+                <div class="module-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Digital Literacy
+                </h3>
+
+                <p>
+                    Algorithmic thinking, productivity
+                    tools, technology for better living,
+                    innovation, creativity and social
+                    media do's and don'ts.
+                </p>
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <div class="footer">
+
+            SMILE Training Tracking System © 2026
+
+        </div>
+
+
+    </main>
+
+
+</body>
+
+</html>
