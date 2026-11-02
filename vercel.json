@@ -1,0 +1,50 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/api",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/trainer/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/modules.html",
+      "destination": "/module.html"
+    },
+    {
+      "source": "/modules",
+      "destination": "/module.html"
+    },
+    {
+      "source": "/module:id([0-9]+).html",
+      "destination": "/module.html"
+    },
+    {
+      "source": "/module:id([0-9]+)",
+      "destination": "/module.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
+    }
+  ]
+}

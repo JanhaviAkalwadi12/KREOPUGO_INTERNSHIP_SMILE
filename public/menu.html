@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SMILE - Main Menu</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        body {
+            background: #eef5fc;
+            min-height: 100vh;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .header {
+
+            height: 75px;
+
+            background: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            box-shadow:
+                0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* ================= LOGO ================= */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .smile {
+
+            width: 50px;
+
+            height: 50px;
+
+            background: #ffc24b;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 28px;
+
+            margin-right: 10px;
+
+            box-shadow:
+                0 5px 0 #d99b1b;
+        }
+
+
+        .logo h1 {
+
+            color: #2058a5;
+
+            font-size: 27px;
+        }
+
+
+        .logo p {
+
+            font-size: 10px;
+
+            color: #555;
+        }
+
+
+        /* ================= LOGOUT ================= */
+
+        .logout {
+
+            text-decoration: none;
+
+            background: #2058a5;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        .logout:hover {
+
+            background: #174a8d;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        .main {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 55px 25px;
+        }
+
+
+        /* ================= TITLE ================= */
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+
+        .title h2 {
+
+            color: #2058a5;
+
+            font-size: 34px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .title p {
+
+            color: #666;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= OPTIONS ================= */
+
+        .options {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+
+            perspective: 1200px;
+        }
+
+
+        /* ================= CARD ================= */
+
+        .option-card {
+
+            min-height: 220px;
+
+            background: white;
+
+            border-radius: 18px;
+
+            text-decoration: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 25px;
+
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.1);
+
+            transform-style: preserve-3d;
+
+            transition: 0.4s;
+        }
+
+
+        /* ================= 3D EFFECT ================= */
+
+        .option-card:hover {
+
+            transform:
+                rotateX(7deg) rotateY(-7deg) translateY(-10px) translateZ(20px);
+
+            box-shadow:
+                15px 20px 35px rgba(0, 0, 0, 0.18);
+        }
+
+
+        /* ================= ICON ================= */
+
+        .option-icon {
+
+            width: 75px;
+
+            height: 75px;
+
+            border-radius: 18px;
+
+            background: #eef5fc;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 38px;
+
+            margin-bottom: 18px;
+
+            transform: translateZ(30px);
+
+            box-shadow:
+                0 7px 15px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* ================= HEADING ================= */
+
+        .option-card h3 {
+
+            color: #2058a5;
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+
+            transform: translateZ(20px);
+        }
+
+
+        /* ================= DESCRIPTION ================= */
+
+        .option-card p {
+
+            color: #666;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+            transform: translateZ(15px);
+
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 55px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 650px) {
+
+            .header {
+
+                padding: 0 20px;
+            }
+
+
+            .logo h1 {
+
+                font-size: 22px;
+            }
+
+
+            .logout {
+
+                padding: 8px 12px;
+
+                font-size: 12px;
+            }
+
+
+            .options {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .title h2 {
+
+                font-size: 28px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+
+        <!-- SMILE LOGO -->
+
+        <div class="logo">
+
+            <div class="smile">
+                😊
+            </div>
+
+
+            <div>
+
+                <h1>
+                    SMILE
+                </h1>
+<p>
+                    Life Skills
+
+                </p>
+                <p>
+                    & Emotional Intelligence Program
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGOUT -->
+
+        <a href="landingpage1.html" class="logout">
+            Logout
+        </a>
+
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- TITLE -->
+
+        <div class="title">
+
+            <h2>
+                Welcome to SMILE
+            </h2>
+
+            <p>
+                Select an option to continue
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= EIGHT OPTIONS ================= -->
+
+        <div class="options">
+
+
+            <!-- 1. ADMIN PANEL -->
+
+            <a href="AdminPannel.html" class="option-card">
+
+                <div class="option-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    Admin Panel
+                </h3>
+
+                <p>
+                    Manage trainers, students,
+                    training and reports.
+                </p>
+
+            </a>
+
+
+
+            
+
+
+            <!-- 3. VIDEOS -->
+
+            <a href="video.html" class="option-card">
+
+                <div class="option-icon">
+                    🎥
+                </div>
+
+                <h3>
+                    Videos
+                </h3>
+
+                <p>
+                    Watch training videos
+                    related to the modules.
+                </p>
+
+            </a>
+
+
+
+            <!-- 4. MODULES -->
+
+            <a href="module.html" class="option-card">
+
+                <div class="option-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Modules
+                </h3>
+
+                <p>
+                    Explore the seven training
+                    modules of SMILE.
+                </p>
+
+            </a>
+
+
+
+            <!-- 5. TESTIMONIES -->
+
+            <a href="Testimonies.html" class="option-card">
+
+                <div class="option-icon">
+                    💬
+                </div>
+
+                <h3>
+                    Testimonies
+                </h3>
+
+                <p>
+                    Read experiences and
+                    feedback from participants.
+                </p>
+
+            </a>
+
+
+         
+
+
+
+            <!-- 8. MULTI-METHOD APPROACH -->
+
+            <a href="multimedia.html" class="option-card">
+
+                <div class="option-icon">
+                    🌟
+                </div>
+
+                <h3>
+                    SMILE Multimedia Approach
+                </h3>
+
+                <p>
+                    Explore the multi-method
+                    approach used by SMILE.
+                </p>
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <div class="footer">
+
+            SMILE Training Tracking System © 2026
+
+        </div>
+
+
+    </main>
+
+
+</body>
+
+</html>

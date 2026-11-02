@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SMILE - Admin Panel</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eef5fc;
+            color: #333;
+        }
+
+        .header {
+            height: 75px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .smile {
+            width: 50px;
+            height: 50px;
+            background: #ffc24b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-right: 10px;
+            box-shadow: 0 5px 0 #d99b1b;
+        }
+
+        .logo h1 {
+            color: #2058a5;
+            font-size: 26px;
+        }
+
+        .logo p {
+            font-size: 10px;
+            color: #555;
+        }
+
+        .logout-btn {
+            background: #2058a5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 7px;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .logout-btn:hover {
+            background: #174a8d;
+        }
+
+        .main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            margin-bottom: 25px;
+        }
+
+        .page-title h2 {
+            color: #2058a5;
+            font-size: 28px;
+        }
+
+        .page-title p {
+            color: #666;
+            margin-top: 6px;
+        }
+
+        .form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #c5d4e3;
+            border-radius: 7px;
+            font-size: 15px;
+            background: white;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border: 2px solid #2058a5;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .radio-option input {
+            width: 18px;
+            height: 18px;
+            accent-color: #2058a5;
+        }
+
+        .upload-box {
+            border: 2px dashed #b8cce0;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f8fbff;
+        }
+
+        .upload-box input {
+            width: 100%;
+        }
+
+        .upload-note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .submit-btn,
+        .reset-btn {
+            padding: 13px 25px;
+            border: none;
+            border-radius: 7px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background: #2058a5;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background: #174a8d;
+        }
+
+        .reset-btn {
+            background: #dfe7ef;
+            color: #333;
+        }
+
+        .message {
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 7px;
+            background: #f1f1f1;
+        }
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 0 20px;
+            }
+
+            .form-box {
+                padding: 20px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .submit-btn,
+            .reset-btn {
+                width: 100%;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="smile">
+                😊
+            </div>
+
+            <div>
+
+                <h1>SMILE</h1>
+
+                <p>Life Skills</p>
+
+                <p>& Emotional Intelligence Program</p>
+
+            </div>
+
+        </div>
+
+
+        <a href="menu.html" class="logout-btn">
+            Log Out
+        </a>
+
+    </header>
+
+
+    <main class="main">
+
+
+        <div class="page-title">
+
+            <h2>Session Report</h2>
+
+            <p>
+                Enter the details of the training session.
+            </p>
+
+        </div>
+
+
+    
+
+
+        <div class="form-box">
+
+
+            <form id="sessionForm" action="AdminPannel.html" method="POST" enctype="multipart/form-data">
+
+
+                <!-- TRAINER -->
+
+                <div class="form-group">
+
+                    <label>
+                        Select Trainer
+                    </label>
+
+                    <select name="trainerUsername" required>
+
+                        <option value="">
+                            Select Trainer
+                        </option>
+
+                        {% for trainer in trainers %}
+
+                        <option value="{{ trainer.username }}">
+
+                            {{ trainer.trainer_name }}
+                            -
+                            {{ trainer.username }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- INSTITUTE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Institute Name
+                    </label>
+
+                    <select name="institute" required>
+
+                        <option value="">
+                            Select Institute
+                        </option>
+
+                        <option value="Institute 1">
+                            Institute 1
+                        </option>
+
+                        <option value="Institute 2">
+                            Institute 2
+                        </option>
+
+                        <option value="Institute 3">
+                            Institute 3
+                        </option>
+
+                        <option value="Institute 4">
+                            Institute 4
+                        </option>
+
+                        <option value="Institute 5">
+                            Institute 5
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Date of Session
+                    </label>
+
+                    <input type="date" name="sessionDate" required>
+
+                </div>
+
+
+                <!-- SESSION -->
+
+                <div class="form-group">
+
+                    <label>
+                        Session
+                    </label>
+
+                    <div class="radio-group">
+
+                        <label class="radio-option">
+
+                            <input type="radio" name="session" value="Morning" required>
+
+                            Morning
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input type="radio" name="session" value="Afternoon">
+
+                            Afternoon
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MORNING TOPICS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Morning Topics
+                    </label>
+
+                    <textarea name="morningTopics" placeholder="Enter the morning topics..."></textarea>
+
+                </div>
+
+
+                <!-- AFTERNOON TOPICS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Afternoon Topics
+                    </label>
+
+                    <textarea name="afternoonTopics" placeholder="Enter the afternoon topics..."></textarea>
+
+                </div>
+
+
+                <!-- ACTIVITIES -->
+
+                <div class="form-group">
+
+                    <label>
+                        Key Activities and Icebreakers
+                    </label>
+
+                    <textarea name="activities" placeholder="Enter key activities and icebreakers..."></textarea>
+
+                </div>
+
+
+                <!-- HIGHLIGHTS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Session Highlights / Wins
+                    </label>
+
+                    <textarea name="highlights" placeholder="Enter session highlights or wins..."></textarea>
+
+                </div>
+
+
+                <!-- CHALLENGES -->
+
+                <div class="form-group">
+
+                    <label>
+                        Challenges Faced
+                    </label>
+
+                    <textarea name="challenges" placeholder="Enter challenges faced..."></textarea>
+
+                </div>
+
+
+                <!-- REMARKS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Trainer Remarks
+                    </label>
+
+                    <textarea name="remarks" placeholder="Enter trainer remarks..."></textarea>
+
+                </div>
+
+
+                <!-- SESSION 1 PHOTOS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Session 1 Photos
+                    </label>
+
+                    <div class="upload-box">
+
+                        <input type="file" name="session1Photos" id="session1Photos" accept="image/*" multiple>
+
+                        <p class="upload-note">
+                            Maximum 5 photos allowed.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SESSION 2 PHOTOS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Session 2 Photos
+                    </label>
+
+                    <div class="upload-box">
+
+                        <input type="file" name="session2Photos" id="session2Photos" accept="image/*" multiple>
+
+                        <p class="upload-note">
+                            Maximum 5 photos allowed.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VIDEO -->
+
+                <div class="form-group">
+
+                    <label>
+                        Session Video
+                    </label>
+
+                    <div class="upload-box">
+
+                        <input type="file" name="sessionVideo" id="sessionVideo" accept="video/*">
+
+                        <p class="upload-note">
+                            Maximum video duration: 30 seconds.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="button-group">
+
+                    <button type="submit" class="submit-btn">
+                        Submit
+                    </button>
+
+
+                    <button type="reset" class="reset-btn">
+                        Reset
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        document
+            .getElementById("sessionForm")
+            .addEventListener("submit", function (event) {
+
+
+                const session1 =
+                    document.getElementById("session1Photos");
+
+
+                if (session1.files.length > 5) {
+
+                    event.preventDefault();
+
+                    alert(
+                        "Session 1: Maximum 5 photos are allowed."
+                    );
+
+                    return;
+                }
+
+
+                const session2 =
+                    document.getElementById("session2Photos");
+
+
+                if (session2.files.length > 5) {
+
+                    event.preventDefault();
+
+                    alert(
+                        "Session 2: Maximum 5 photos are allowed."
+                    );
+
+                    return;
+                }
+
+
+                const videoFile =
+                    document.getElementById("sessionVideo").files[0];
+
+
+                if (videoFile) {
+
+                    event.preventDefault();
+
+
+                    const video =
+                        document.createElement("video");
+
+
+                    video.preload = "metadata";
+
+
+                    video.onloadedmetadata = function () {
+
+                        window.URL.revokeObjectURL(
+                            video.src
+                        );
+
+
+                        if (video.duration > 30) {
+
+                            alert(
+                                "Video must not be more than 30 seconds."
+                             );
+
+                            return;
+                        }
+
+
+                        document
+                            .getElementById("sessionForm")
+                            .submit();
+
+                    };
+
+
+                    video.src =
+                        URL.createObjectURL(videoFile);
+
+                }
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "smile-project",
+  "version": "1.0.0",
+  "description": "SMILE - Life Skills & Emotional Intelligence Program",
+  "private": true,
+  "scripts": {
+    "dev": "python api/app.py",
+    "start": "python api/app.py"
+  },
+  "keywords": [
+    "smile-project",
+    "smile",
+    "life-skills",
+    "emotional-intelligence",
+    "flask",
+    "vercel"
+  ],
+  "author": "SMILE Team",
+  "license": "ISC"
+}
